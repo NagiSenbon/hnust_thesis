@@ -78,9 +78,7 @@
 %   清华大学研究生院颁发的
 %   \href{http://yjsy.cic.tsinghua.edu.cn/docinfo/board/boarddetail.jsp?columnId=001050603&parentColumnId=0010506&itemSeq=5365}{%
 %   《研究生学位论文写作指南》}（仅限校内网络访问）、
-%   英文版《Guide to Thesis Writing for Graduate Students》、
-%   清华大学教务处颁发的《综合论文训练写作指南》、
-%   外文系的《英语专业本科生综合论文训练》和
+%   清华大学教务处颁发的《综合论文训练写作指南》和
 %   清华大学
 %   \href{http://postdoctor.tsinghua.edu.cn/info/czxz/1283}{%
 %     《编写“清华大学博士后研究报告”参考意见》}
@@ -419,22 +417,6 @@
 % 须采用中文封面”，“除留学生外，学位论文一律须用汉语书写”，用户须提前与导师和院系
 % 的审查教师协商使用何种语言书写论文。
 %
-% \subsubsection{开题报告}
-% \DescribeOption{thesis-type}
-% 模板还支持博士生论文开题报告的格式，可以通过设置 \option{thesis-type=proposal} 得到。
-%
-% 开题报告与学位论文有两点不同：
-% \begin{enumerate}
-%   \item 封面的信息和格式有区别，尤其是增加了一行“学号”信息，需要通过 \option{student-id} 填写；
-%   \item 开题报告不含英文标题页。
-% \end{enumerate}
-% \begin{latex}
-%   \thusetup{
-%     thesis-type = proposal,
-%     student-id  = {2000310000},
-%   }
-% \end{latex}
-%
 % \subsection{封面信息}
 % \label{sec:titlepage}
 % 封面信息可以通过统一设置命令 \cs{thusetup} 设置 \emph{key=value} 形式完成；
@@ -513,21 +495,13 @@
 %   }
 % \end{latex}
 %
-% \subsubsection{学号}
-% 学号，仅用于博士生论文开题报告。
-% \begin{latex}
-%   \thusetup{
-%     student-id  = {20000310000},
-%   }
-% \end{latex}
-%
 % \subsubsection{导师}
 % \myentry{导师}
 % 导师的姓名与职称之间以“,”（西文逗号，U+002C）隔开，下同。
 % \begin{latex}
 %   \thusetup{
 %     supervisor  = {导师姓名, 教授},
-%     supervisor* = {Professor Supervisor Name},
+%     supervisor* = {Supervisor Name, Professor},
 %   }
 % \end{latex}
 %
@@ -536,7 +510,7 @@
 % \begin{latex}
 %   \thusetup{
 %     associate-supervisor  = {副导师姓名, 副教授},
-%     associate-supervisor* = {Professor Assoc-Supervisor Name},
+%     associate-supervisor* = {Assoc-Supervisor Name, Professor},
 %   }
 % \end{latex}
 %
@@ -545,7 +519,7 @@
 % \begin{latex}
 %   \thusetup{
 %     joint-supervisor  = {联合导师姓名, 教授},
-%     joint-supervisor* = {Professor Join-Supervisor Name},
+%     joint-supervisor* = {Join-Supervisor Name, Professor},
 %   }
 % \end{latex}
 %
@@ -753,57 +727,30 @@
 % 见 \pkg{nomencl} 宏包的文档。
 %
 % \subsection{正文部分}
-% \subsubsection{图表编号}
-% \DescribeOption{figure-number-separator}
-% \DescribeOption{table-number-separator}
-% \DescribeOption{equation-number-separator}
-% 研究生要求图表和公式的编号使用“.”或“-”连接，模板默认使用句点“.”。
-% 用户也可以通过 \option{figure-number-separator}、\option{table-number-separator}
-% 等选项分别设置：
-% \begin{latex}
-%   \thusetup{
-%     figure-number-separator = {-},
-%     table-number-separator = {-},
-%     equation-number-separator = {-},
-%   }
-% \end{latex}
-% \DescribeOption{number-separator}
-% 也可以使用 \option{number-separator} 同时设置图、表、公式三项的编号连接符，
-% 比如 |\thusetup{number-separator = -}|。
-%
-% 本科生要求“附录中图、表、公式的编号，应与正文中的编号区分开”，
-% 应理解为将章号改变为附录对应的大写字母编号，连接符不宜改变。
 %
 % \subsubsection{数学符号}
 % \label{sec:math}
-% 中文论文的数学符号默认遵循 GB/T 3102.11—1993《物理科学和技术中使用的数学符号》。
-% 该标准参照采纳 ISO 31-11:1992，
-% 但是与 \TeX{} 默认的英美国家的符号习惯有许多差异，主要有：
+% 数学符号应遵循 GB/T 3102.11—1993《物理科学和技术中使用的数学符号》
+% 模板中使用 \pkg{unicode-math} 宏包来配置数学符号，
+% 与 \LaTeX{} 默认的英美国家的符号习惯有所差异：
 % \newcommand\dif{\mathop{}\!\mathrm{d}}
 % \begin{enumerate}
-%   \item 大写希腊字母默认为斜体，如 $\Delta$、$\Sigma$，
-%     有限增量符号 $\increment$（\cs{increment}）固定使用正体。
-%   \item 数学常数和特殊函数名用正体，如 $\symup{\pi} = 3.14\dots$；$\symup{e} = 2.718\dots$。
-%   \item 微分号使用正体，比如 $\dif y / \dif x$。
-%   \item 向量、矩阵和张量用粗斜体（\cs{symbf}），如 $\symbf{x}$、$\symbf{\Sigma}$、$\symbfsf{T}$。
-%   \item 省略号按照中文的习惯固定居中，如 $1, 2, \dots, n$。
+%   \item 大写希腊字母默认为斜体，如 \cs{Delta}：$\Delta$。
+%   \item 有限增量符号 $\increment$（U+2206）应使用 \pkg{unicode-math} 宏包提供的
+%     \cs{increment} 命令。
+%   \item 向量、矩阵和张量要求粗斜体，应使用 \cs{symbf} 命令，
+%     如 \verb|\symbf{A}|、\verb|\symbf{\alpha}|。
+%   \item 数学常数和特殊函数要求用正体，应使用 \cs{symup} 命令，
+%     如 $\symup{\pi} = 3.14\dots$; $\symup{e} = 2.718\dots$，
+%   \item 微分号和积分号使用使用正体，比如 $\int f(x) \dif x$。
 % \end{enumerate}
 %
-% \DescribeOption{math-style}
-% 英文论文的数学符号默认使用 \TeX{} 样式。
-% 如果有必要，也可以通过设置 \option{math-style} 选择数学符号样式，
-% 可选：\option{GB}（中文默认），\option{TeX}（英文默认），\option{ISO}。
-% \begin{latex}
-%   \thusetup{
-%     math-style = ISO,
-%   }
-% \end{latex}
-%
-% 模板使用
+% 关于数学符号更多的用法，参考
 % \href{http://mirrors.ctan.org/macros/latex/contrib/unicode-math/unicode-math.pdf}{\pkg{unicode-math}}
-% 配置数学符号的字体。
-% 全部数学符号的命令参考
+% 宏包的使用说明，
+% 全部数学符号命的令参考
 % \href{http://mirrors.ctan.org/macros/latex/contrib/unicode-math/unimath-symbols.pdf}{\pkg{unimath-symbols}}。
+%
 % 注意，\pkg{unicode-math} 宏包与 \pkg{amsfonts}、\pkg{amssymb}、\pkg{bm}、
 % \pkg{mathrsfs}、\pkg{upgreek} 等宏包\emph{不}兼容。
 % 模板作了处理，用户可以直接使用这些宏包的命令，如 \cs{bm}、\cs{mathscr}、
@@ -1011,26 +958,22 @@
 %
 % \subsubsection{声明}
 % \DescribeMacro{\statement}
-% 直接使用 \cs{statement} 命令可以编译生成声明页。
-% 如果要插入扫描后的声明页，将可选参数指定为扫描后的 PDF 文件名，例如：
+% 如果使用声明扫描页，将可选参数指定为扫描后的 PDF 文件名，例如：
 %
 % \begin{latex}
 %   \statement[file=scan-statement.pdf]
 % \end{latex}
 %
-% 由于本科生打印版和电子版有空白页的差别，声明的页码可能不同。
-% 所以编译声明页时默认不加页脚（\texttt{page-style=empty}），
-% 在签字后插入扫描页时再补上页脚，防止页码冲突。
+% 由于打印版和电子版有空白页的差别，声明的页码可能不同。
+% 所以编译声明页时默认不加页眉和页脚（\texttt{page-style=empty}），
+% 在签字后插入扫描页时再补上页眉和页脚，防止页码冲突。
 %
 % 如果需要编译时也加页码（如直接对电子版进行签名而不是插入扫描页），
 % 可以使用在 \cs{statement} 命令设置
 % \begin{latex}
 %   \statement[page-style=plain]
 % \end{latex}
-% 注意，本科生插入扫描页时总是会加页码，不受该选项控制。
-%
-% 研究生不存在空白页的问题，所以在编译声明页时总是会加上页眉和页脚，
-% 而在插入扫描页时则不再添加，不受 \option{page-style} 的控制。
+% 注意，插入扫描页总是会加页码，不受该选项控制。
 %
 % \subsubsection{附录}
 %
@@ -1388,14 +1331,6 @@
 %
 %    \begin{macrocode}
 \thu@define@key{
-  thesis-type = {
-    name = thesis@type,
-    choices = {
-      thesis,
-      proposal,
-    },
-    default = thesis,
-  },
   degree = {
     choices = {
       bachelor,
@@ -1490,15 +1425,6 @@
       none,
     },
     default = xits,
-  },
-  math-style = {
-    name = math@style,
-    choices = {
-      GB,
-      ISO,
-      TeX,
-    },
-    default = GB,
   },
 %    \end{macrocode}
 %
@@ -2016,59 +1942,20 @@
 \thu@option@hook{font}{\thu@load@font}
 %    \end{macrocode}
 %
-% 使用 \pkg{unicode-math} 配置数学符号格式。
+% 使用 \pkg{unicode-math} 配置数学字体
 %    \begin{macrocode}
-\newcommand\thu@stix@stylistic@set{%
-  \ifthu@math@style@TeX\else
-    8
-  \fi
+\unimathsetup{
+  math-style = ISO,
+  bold-style = ISO,
+  nabla      = upright,
+  partial    = upright,
 }
-\newcommand\thu@set@math@style{%
-  \ifthu@math@style@TeX
-    \unimathsetup{
-      math-style = TeX,
-      bold-style = TeX,
-      partial    = italic,
-    }%
-  \else
-    \unimathsetup{
-      math-style = ISO,
-      bold-style = ISO,
-      partial    = upright,
-    }%
-  \fi
-  \ifthu@math@style@GB
-    \protected\def\le{\leqslant}%
-    \protected\def\ge{\geqslant}%
-    \DeclareRobustCommand\mathellipsis{\mathinner{\unicodecdots}}%
-  \else
-    \protected\def\le{\leq}%
-    \protected\def\ge{\geq}%
-    \DeclareRobustCommand\mathellipsis{\mathinner{\unicodeellipsis}}%
-  \fi
-}
-\ifthu@main@language@chinese
-  \thusetup{math-style=GB}%
-\else
-  \thusetup{math-style=TeX}%
-\fi
-\thu@set@math@style
-\thu@option@hook{math-style}{\thu@set@math@style}
-\thu@option@hook{main-language}{%
-  \ifthu@main@language@chinese
-    \thusetup{math-style=GB}%
-  \else
-    \thusetup{math-style=TeX}%
-  \fi
-}
-%    \end{macrocode}
-%
-%    \begin{macrocode}
 \newcommand\thu@load@math@font@xits{%
   \thu@set@xits@names
   \setmathfont{\thu@font@name@xits@math@rm}[
     Extension    = .otf,
-    StylisticSet = \thu@stix@stylistic@set,
+    BoldFont     = \thu@font@name@xits@math@bf,
+    StylisticSet = 8,
   ]%
   \setmathfont{\thu@font@name@xits@math@rm}[
     Extension    = .otf,
@@ -2079,7 +1966,7 @@
 \newcommand\thu@load@math@font@stix{%
   \setmathfont{STIX2Math}[
     Extension    = .otf,
-    StylisticSet = \thu@stix@stylistic@set,
+    StylisticSet = 8,
   ]%
   \setmathfont{STIX2Math}[
     Extension    = .otf,
@@ -2099,7 +1986,6 @@
 }
 \thu@load@math@font
 \thu@option@hook{math-font}{\thu@load@math@font}
-\thu@option@hook{math-style}{\thu@load@math@font}
 %    \end{macrocode}
 %
 % 中文字体
@@ -2393,8 +2279,6 @@
         \def\contentsname{目\quad 录}%
         \def\thu@denotation@name{符号和缩略语说明}%
         \def\thu@resume@name{个人简历、在学期间完成的相关学术成果}%
-        \def\thu@comments@name{指导教师学术评语}%
-        \def\thu@resolution@name{答辩委员会决议书}%
       \else  % degree = postdoc
         \def\contentsname{目\qquad 次}%
         \def\thu@denotation@name{符号表}%
@@ -2420,19 +2304,17 @@
         \def\thu@acknowledgements@name{ACKNOWLEDGEMENTS}%
         \def\thu@resume@name{PUBLICATIONS}%
       \else
-        \def\contentsname{Table of Contents}%
+        \def\contentsname{Contents}%
         \def\listfigurename{List of Figures}%
         \def\listtablename{List of Tables}%
         \def\thu@list@figure@table@name{List of Figures and Tables}%
         \def\thu@list@algorithm@name{List of Algorithms}%
         \def\listequationname{List of Equations}%
-        \def\thu@denotation@name{List of Symbols and Acronyms}%
-        \def\bibname{References}%
+        \def\thu@denotation@name{Nomenclature}%
+        \def\bibname{Bibliography}%
         \def\appendixname{Appendix}%
         \def\thu@acknowledgements@name{Acknowledgements}%
-        \def\thu@resume@name{Resume}%
-        \def\thu@comments@name{Comments from Thesis Supervisor}%
-        \def\thu@resolution@name{Resolution of Thesis Defense Committee}%
+        \def\thu@resume@name{Resume and Academic Achievements}%
       \fi
     \fi
   \fi
@@ -2577,14 +2459,7 @@
     \let\chaptermark\@gobble
   \else
     \renewcommand\headrulewidth{0.75bp}%
-    \fancyhead[C]{%
-      \wuhao
-      \ifthu@main@language@chinese
-        \leftmark
-      \else
-        \MakeUppercase{\leftmark}%
-      \fi
-      }%
+    \fancyhead[C]{\wuhao\leftmark}%
     \fancyfoot[C]{\wuhao\thepage}%
     \let\@mkboth\markboth
     \def\chaptermark##1{%
@@ -2612,14 +2487,14 @@
   space=auto,
 }
 \newcommand\thu@set@indent{%
-  \ifthu@main@language@chinese
-    \ctexset{autoindent=2}%
-  \else
+  \ifthu@main@language@english
     \ifthu@degree@bachelor
       \ctexset{autoindent=0.8cm}%
     \else
-      \ctexset{autoindent=0.74cm}%
+      \ctexset{autoindent=2}%
     \fi
+  \else
+    \ctexset{autoindent=2}%
   \fi
 }
 \thu@set@indent
@@ -2760,6 +2635,76 @@
 %
 % \subsubsection{数学相关}
 % \label{sec:equation}
+% \begin{macro}{\ldots}
+% 省略号一律居中，所以 \cs{ldots} 不再居于底部。
+%    \begin{macrocode}
+\newcommand\thu@set@math@ellipsis{%
+  \ifthu@language@chinese
+    \DeclareRobustCommand\mathellipsis{\mathinner{\unicodecdots}}%
+  \else
+    \ifthu@language@english
+      \DeclareRobustCommand\mathellipsis{\mathinner{\unicodeellipsis}}%
+    \fi
+  \fi
+}
+\thu@set@math@ellipsis
+\thu@option@hook{language}{\thu@set@math@ellipsis}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\le}
+% \begin{macro}{\ge}
+% \begin{macro}{\leq}
+% \begin{macro}{\geq}
+% 小于等于号要使用倾斜的形式。
+%    \begin{macrocode}
+\protected\def\le{\leqslant}
+\protected\def\ge{\geqslant}
+\AtBeginDocument{%
+  \renewcommand\leq{\leqslant}%
+  \renewcommand\geq{\geqslant}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\int}
+% 积分号 \cs{int} 使用正体，并且上下限默认置于积分号上下两侧。
+%    \begin{macrocode}
+\removenolimits{%
+  \int\iint\iiint\iiiint\oint\oiint\oiiint
+  \intclockwise\varointclockwise\ointctrclockwise\sumint
+  \intbar\intBar\fint\cirfnint\awint\rppolint
+  \scpolint\npolint\pointint\sqint\intlarhk\intx
+  \intcap\intcup\upint\lowint
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\Re}
+% \begin{macro}{\Im}
+% 实部、虚部操作符使用罗马体 $\mathrm{Re}$、$\mathrm{Im}$ 而不是 fraktur 体
+% $\Re$、$\Im$。
+%    \begin{macrocode}
+\AtBeginDocument{%
+  \renewcommand{\Re}{\operatorname{Re}}%
+  \renewcommand{\Im}{\operatorname{Im}}%
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{macro}
+%
+% \begin{macro}{\nabla}
+% \cs{nabla} 使用粗正体。
+%    \begin{macrocode}
+\AtBeginDocument{%
+  \renewcommand\nabla{\mbfnabla}%
+}
+%    \end{macrocode}
+% \end{macro}
+%
 % \begin{macro}{\bm}
 % \begin{macro}{\boldsymbol}
 % 兼容旧的粗体命令：\pkg{bm} 的 \cs{bm} 和 \pkg{amsmath} 的 \cs{boldsymbol}。
@@ -2789,6 +2734,7 @@
 % 允许太长的公式断行、分页等。
 %    \begin{macrocode}
 \allowdisplaybreaks[4]
+\renewcommand\theequation{\ifnum \c@chapter>\z@ \thechapter-\fi\@arabic\c@equation}
 %    \end{macrocode}
 %
 % 公式距前后文的距离由 4 个参数控制，参见 \cs{normalsize} 的定义。
@@ -2821,101 +2767,48 @@
 \renewcommand{\floatpagefraction}{0.60}
 %    \end{macrocode}
 %
-% 允许用户设置图表编号的连接符。
-%    \begin{macrocode}
-\thu@define@key{
-  figure-number-separator = {
-    name    = figure@number@separator,
-    default = {.},
-  },
-  table-number-separator = {
-    name    = table@number@separator,
-    default = {.},
-  },
-  equation-number-separator = {
-    name    = equation@number@separator,
-    default = {.},
-  },
-  number-separator = {
-    name    = number@separator,
-    default = {.},
-  },
-}
-\renewcommand\thefigure{%
-  \ifnum\c@chapter>\z@
-    \thechapter
-    \thu@figure@number@separator
-  \fi
-  \@arabic\c@figure
-}
-\renewcommand\thetable{%
-  \ifnum\c@chapter>\z@
-    \thechapter
-    \thu@table@number@separator
-  \fi
-  \@arabic\c@table
-}
-\renewcommand\theequation{%
-  \ifnum\c@chapter>\z@
-    \thechapter
-    \thu@equation@number@separator
-  \fi
-  \@arabic\c@equation
-}
-\newcommand\thu@set@number@separator{%
-  \let\thu@figure@number@separator\thu@number@separator
-  \let\thu@table@number@separator\thu@number@separator
-  \let\thu@equation@number@separator\thu@number@separator
-}
-\thu@option@hook{number-separator}{\thu@set@number@separator}
-%    \end{macrocode}
-%
-% 研究生要求表单元格中的文字采用 11pt 宋体字，单倍行距。段前空 3 磅，段后空 3 磅。
-% 段前段后的高度直接加到行距上，对于中文，修正后的行距为
-% $11 \times 1.3 + 6 = 20.3$(pt),
-% 而英文版的行距为 $11 \times 1.3 + 6 = 18.65$(pt)。
-% 用户可以手动设置 \cs{arraystretch} 调整表格的行距 。
+% 研究生要求表单元格中的文字采用 11pt 宋体字，单倍行距，段前空 3 磅，段后空 3 磅。
+% $(3 + 3) / (11 \times 1.3) \approx 0.4$
 %    \begin{macrocode}
 \patchcmd\@floatboxreset{%
   \normalsize
 }{%
-  \ifthu@language@chinese
-    \fontsize{11bp}{20.3bp}\selectfont
-  \else
-    \fontsize{11bp}{18.65bp}\selectfont
-  \fi
+  \fontsize{11bp}{14.3bp}\selectfont
+  \renewcommand\arraystretch{1.4}%
 }{}{\thu@patch@error{\@floatboxreset}}
-%    \end{macrocode}
-%
-% 对 \pkg{longtable} 跨页表格进行相同的设置。
-%    \begin{macrocode}
-\AtEndOfPackageFile*{longtable}{
-  \AtBeginEnvironment{longtable}{%
-    \ifthu@language@chinese
-      \fontsize{11bp}{20.3bp}\selectfont
-    \else
-      \fontsize{11bp}{18.65bp}\selectfont
-    \fi
-  }
-}
 %    \end{macrocode}
 %
 % 定制浮动图形和表格标题样式，以及改变附录中浮动体的编号规则：
 % \begin{itemize}
-%   \item 图表标题字体为 11pt
+%   \item 图表标题字体为 11pt， 这里写作大五号
 %   \item 去掉图表号后面的冒号，图序与图名文字之间空一个汉字符宽度
+%   \item 本科生附录中的各种浮动体需要编号为类似 A-1 的形式
 %   \item 图：caption 在下，段前空 6 磅，段后空 12 磅
 %   \item 表：caption 在上，段前空 12 磅，段后空 6 磅
 % \end{itemize}
 %    \begin{macrocode}
-\DeclareCaptionFont{thu}{%
+\ifthu@degree@bachelor
+  \AtBeginDocument{% delay the check until all packages are loaded
+    \g@addto@macro\appendix{\renewcommand*{\thefigure}{\thechapter-\arabic{figure}}}
+    \g@addto@macro\appendix{\renewcommand*{\thetable}{\thechapter-\arabic{table}}}
+  }
+\fi
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+\newcommand\thu@caption@font{}
+\newcommand\thu@set@caption@font{%
   \ifthu@degree@bachelor
-    \fontsize{11bp}{15bp}\selectfont
+    \renewcommand\thu@caption@font{\fontsize{11bp}{15bp}\selectfont}%
   \else
-    \fontsize{11bp}{14.3bp}\selectfont
+    \renewcommand\thu@caption@font{\fontsize{11bp}{14.3bp}\selectfont}%
   \fi
 }
+\thu@set@caption@font
+\thu@option@hook{degree}{\thu@set@caption@font}
+\DeclareCaptionFont{thu}{\thu@caption@font}
 \captionsetup{
+  format         = hang,
   font           = thu,
   labelsep       = quad,
   aboveskip      = 6bp,
@@ -2962,18 +2855,22 @@
     nameformat   = {},
     numberformat = {},
     titleformat  = {},
+    aftername    = \quad,
     fixskip      = true,
     afterindent  = true,
     lofskip      = 0pt,
     lotskip      = 0pt,
   },
   section = {
+    aftername    = \quad,
     afterindent  = true,
   },
   subsection = {
+    aftername    = \quad,
     afterindent  = true,
   },
   subsubsection = {
+    aftername    = \quad,
     afterindent  = true,
   },
   paragraph/afterindent = true,
@@ -3004,25 +2901,21 @@
         format     = \centering\sffamily\fontsize{15bp}{20bp}\selectfont,
         beforeskip = 30bp,
         afterskip  = 20bp,
-        aftername  = \quad,
       },
       section = {
         format     = \sffamily\fontsize{14bp}{18bp}\selectfont,
         beforeskip = 25bp,
         afterskip  = 12bp,
-        aftername  = \quad,
       },
       subsection = {
         format     = \sffamily\fontsize{13bp}{15bp}\selectfont,
         beforeskip = 12bp,
         afterskip  = 6bp,
-        aftername  = \quad,
       },
       subsubsection = {
         format     = \sffamily\fontsize{12bp}{14bp}\selectfont,
         beforeskip = 12bp,
         afterskip  = 6bp,
-        aftername  = \quad,
       },
     }%
     \ifthu@main@language@chinese
@@ -3060,63 +2953,24 @@
 % 由于 Word 的行距算法不同，这里进行了一些调整使得视觉上更接近。
 %    \begin{macrocode}
   \else
-    \ifthu@main@language@chinese
-      \ctexset{%
-        chapter = {
-          format      = \centering\sffamily\sanhao,
-          nameformat  = {},
-          titleformat = {},
-          aftername   = \quad,
-        },
-        section = {
-          format     = \sffamily\fontsize{14bp}{20bp}\selectfont,
-          aftername   = \quad,
-        },
-        subsection = {
-          format     = \sffamily\fontsize{13bp}{20bp}\selectfont,
-          aftername   = \quad,
-        },
-        subsubsection = {
-          format     = \sffamily\fontsize{12bp}{20bp}\selectfont,
-          aftername   = \quad,
-        },
-      }%
-    \else
-      \ctexset{%
-        chapter = {
-          format      = \centering\sffamily\bfseries\fontsize{16bp}{20bp}\selectfont,
-          nameformat  = {\MakeUppercase},
-          titleformat = {\MakeUppercase},
-          aftername   = \space,
-        },
-        section = {
-          format     = \sffamily\bfseries\fontsize{14bp}{20bp}\selectfont,
-          aftername   = \space,
-        },
-        subsection = {
-          format     = \sffamily\bfseries\fontsize{13bp}{20bp}\selectfont,
-          aftername   = \space,
-        },
-        subsubsection = {
-          format     = \sffamily\bfseries\fontsize{12bp}{20bp}\selectfont,
-          aftername   = \space,
-        },
-      }%
-    \fi
     \ctexset{%
       chapter = {
+        format     = \centering\sffamily\sanhao,
         beforeskip = 27bp,
         afterskip  = 27bp,
       },
       section = {
+        format     = \sffamily\fontsize{14bp}{20bp}\selectfont,
         beforeskip = 24bp,
         afterskip  = 6bp,
       },
       subsection = {
+        format     = \sffamily\fontsize{13bp}{20bp}\selectfont,
         beforeskip = 12bp,
         afterskip  = 6bp,
       },
       subsubsection = {
+        format     = \sffamily\fontsize{12bp}{20bp}\selectfont,
         beforeskip = 12bp,
         afterskip  = 6bp,
       },
@@ -3301,33 +3155,18 @@
 % 但是页码仍然用 \cs{rmfamily}。
 %    \begin{macrocode}
   \else
-    \ifthu@main@language@chinese
-      \titlecontents{chapter}
-        [\z@]{\addvspace{6bp}\sffamily}
-        {\contentspush{\thecontentslabel\quad}}{}
-        {\rmfamily\thu@leaders\thecontentspage}%
-      \titlecontents{section}
-        [1em]{}
-        {\contentspush{\thecontentslabel\quad}}{}
-        {\thu@leaders\thecontentspage}%
-      \titlecontents{subsection}
-        [2em]{}
-        {\contentspush{\thecontentslabel\quad}}{}
-        {\thu@leaders\thecontentspage}%
-    \else
-      \titlecontents{chapter}
-        [\z@]{\addvspace{6bp}\heiti}
-        {\contentspush{\MakeUppercase{\thecontentslabel}\space}\MakeUppercase}{\MakeUppercase}
-        {\rmfamily\thu@leaders\thecontentspage}%
-      \titlecontents{section}
-        [1em]{}
-        {\contentspush{\thecontentslabel\space}}{}
-        {\thu@leaders\thecontentspage}%
-      \titlecontents{subsection}
-        [2em]{}
-        {\contentspush{\thecontentslabel\space}}{}
-        {\thu@leaders\thecontentspage}%
-    \fi
+    \titlecontents{chapter}
+      [\z@]{\addvspace{6bp}\sffamily}
+      {\contentspush{\thecontentslabel\quad}}{}
+      {\rmfamily\thu@leaders\thecontentspage}%
+    \titlecontents{section}
+      [1em]{}
+      {\contentspush{\thecontentslabel\quad}}{}
+      {\thu@leaders\thecontentspage}%
+    \titlecontents{subsection}
+      [2em]{}
+      {\contentspush{\thecontentslabel\quad}}{}
+      {\thu@leaders\thecontentspage}%
   \fi
 }
 \thu@set@toc@format
@@ -3368,9 +3207,6 @@
   author* = {
     default = {Name of author},
     name    = author@en,
-  },
-  student-id = {
-    name = student@id,
   },
   supervisor = {
     default = {导师姓名},
@@ -3571,10 +3407,8 @@
     \thu@spine
   \fi
   \ifthu@degree@graduate
-    \ifthu@thesis@type@thesis
-      \cleardoublepage
-      \thu@titlepage@en
-    \fi
+    \cleardoublepage
+    \thu@titlepage@en
   \fi
   \clearpage
 }
@@ -3590,19 +3424,13 @@
 \newcommand\thu@titlepage{%
   \thusetup{language = chinese}%
   \ifthu@degree@graduate
-    \ifthu@thesis@type@thesis
-      \ifthu@degree@type@academic
-        \thu@titlepage@graduate@academic
-      \else
-        \ifx\thu@discipline\@empty
-          \thu@titlepage@graduate@professional
-        \else
-          \thu@titlepage@graduate@academic
-        \fi
-      \fi
+    \ifthu@degree@type@academic
+      \thu@titlepage@graduate@academic
     \else
-      \ifthu@thesis@type@proposal
-        \thu@titlepage@proposal
+      \ifx\thu@discipline\@empty
+        \thu@titlepage@graduate@professional
+      \else
+        \thu@titlepage@graduate@academic
       \fi
     \fi
   \else
@@ -3683,44 +3511,6 @@
 }
 %    \end{macrocode}
 %
-% 选题报告封面
-%    \begin{macrocode}
-\newcommand\thu@titlepage@proposal{%
-  \newgeometry{
-    top     = 5cm,
-    bottom  = 3.25cm,
-    hmargin = 3.17cm,
-  }%
-  \thispagestyle{empty}%
-  \begingroup
-    % \vspace*{0.1cm}%
-    \centering
-    % {\thu@titlepage@title}%
-    \parbox[t][3cm]{\textwidth}{%
-      \vskip 0.1cm%
-      \centering
-      \thu@titlepage@title
-    }%
-    \vskip 0.85cm%
-    \thu@titlepage@degree
-    \vfill
-    \parbox[t][8.5cm][t]{\textwidth}{\centering\CJKfamily+{}\thu@titlepage@info}\par
-    \parbox[t][2.5cm][t]{\textwidth}{\centering\thu@titlepage@date}\par
-  \endgroup
-  \clearpage
-  \restoregeometry
-}
-\newcommand\thu@set@student@id{%
-  \ifthu@thesis@type@proposal
-    \ifx\thu@student@id\@empty
-      \thusetup{student-id=2000310000}%
-    \fi
-  \fi
-}
-\thu@set@student@id
-\thu@option@hook{thesis-type}{\thu@set@student@id}
-%    \end{macrocode}
-%
 %    \begin{macrocode}
 \newcommand\thu@titlepage@secret{%
   \sffamily\sanhao
@@ -3745,28 +3535,9 @@
 %    \begin{macrocode}
 \newcommand\thu@titlepage@degree{%
   \begingroup
-    \CJKfamily+{}\xiaoer
     \def\CJKglue{\hskip 1bp}%
-    \ifthu@thesis@type@thesis
-      (申请清华大学\thu@degree@name
-      \ifthu@degree@type@professional
-        专业%
-      \fi
-      学位论文)%
-    \else
-      \ifthu@thesis@type@proposal
-        (清华大学%
-        \ifthu@degree@doctor
-          博士%
-        \else
-          \ifthu@degree@master
-            硕士%
-          \fi
-        \fi
-        学位论文选题报告)%
-      \fi
-    \fi
-    \par
+    \CJKfamily+{}\xiaoer
+    (申请清华大学\thu@degree@name\ifthu@degree@type@professional 专业\fi 学位论文)\par
   \endgroup
 }
 %    \end{macrocode}
@@ -3806,7 +3577,6 @@
   }%
   \fangsong\sanhao[1.95]%
   \begin{tabular}{l}%
-    \renewcommand\arraystretch{1}%
     #4%
   \end{tabular}%
 }
@@ -3815,7 +3585,6 @@
     \thu@info@item{培养单位}{}{\thu@department}%
     \thu@info@item{学科}{}{\thu@discipline}%
     \thu@info@item{研究生}{\thu@name@title}{\thu@author}%
-    \thu@info@item{学号}{}{\thu@student@id}%
     \thu@info@item{指导教师}{\thu@name@title}{\thu@supervisor}%
     \thu@info@item{副指导教师}{\thu@name@title}{\thu@associate@supervisor}%
     \thu@info@item{联合导师}{\thu@name@title}{\thu@joint@supervisor}%
@@ -3825,7 +3594,6 @@
   \thu@titlepage@info@tabular{3.03cm}{5em}{1.52cm}{%
     \thu@info@item{培养单位}{}{\thu@department}%
     \thu@info@item{申请人}{\thu@name@title}{\thu@author}%
-    \thu@info@item{学号}{}{\thu@student@id}%
     \thu@info@item{指导教师}{\thu@name@title}{\thu@supervisor}%
     \thu@info@item{副指导教师}{\thu@name@title}{\thu@associate@supervisor}%
     \thu@info@item{联合导师}{\thu@name@title}{\thu@joint@supervisor}%
@@ -3836,7 +3604,6 @@
     \thu@info@item{培养单位}{}{\thu@department}%
     \thu@info@item{学科}{}{\thu@discipline}%
     \thu@info@item{研究生}{\thu@name@title}{\thu@author}%
-    \thu@info@item{学号}{}{\thu@student@id}%
     \thu@info@item{指导教师}{\thu@name@title}{\thu@supervisor}%
     \thu@info@item{副指导教师}{\thu@name@title}{\thu@associate@supervisor}%
     \thu@info@item{联合指导教师}{\thu@name@title}{\thu@joint@supervisor}%
@@ -3847,7 +3614,6 @@
     \thu@info@item{培养单位}{}{\thu@department}%
     \thu@info@item{工程领域}{}{\thu@discipline}%
     \thu@info@item{申请人}{\thu@name@title}{\thu@author}%
-    \thu@info@item{学号}{}{\thu@student@id}%
     \thu@info@item{指导教师}{\thu@name@title}{\thu@supervisor}%
     \thu@info@item{副指导教师}{\thu@name@title}{\thu@associate@supervisor}%
     \thu@info@item{联合指导教师}{\thu@name@title}{\thu@joint@supervisor}%
@@ -3857,7 +3623,6 @@
   \thu@titlepage@info@tabular{3.28cm}{5em}{1.52cm}{%
     \thu@info@item{培养单位}{}{\thu@department}%
     \thu@info@item{申请人}{\thu@name@title}{\thu@author}%
-    \thu@info@item{学号}{}{\thu@student@id}%
     \thu@info@item{指导教师}{\thu@name@title}{\thu@supervisor}%
     \thu@info@item{副指导教师}{\thu@name@title}{\thu@associate@supervisor}%
     \thu@info@item{联合指导教师}{\thu@name@title}{\thu@joint@supervisor}%
@@ -3870,9 +3635,8 @@
 %    \begin{macrocode}
 \newcommand\thu@titlepage@date{%
   \begingroup
-    \sanhao
     \def\CJKglue{\hskip 1bp}%
-    \thu@format@date{\thu@date@zh@short}{\thu@date}\par
+    \sanhao\thu@format@date{\thu@date@zh@short}{\thu@date}\par
   \endgroup
 }
 %    \end{macrocode}
@@ -3975,7 +3739,6 @@
 }
 \newcommand\thu@titlepage@en@supervisor{%
   \begin{tabular}{r@{\makebox[0.71cm][l]{:}}l}%
-    \renewcommand\arraystretch{1}%
     \thu@thesis@name@en{} Supervisor & \thu@supervisor@en     \\
     \ifx\thu@associate@supervisor@en\@empty\else
       Associate Supervisor            & \thu@associate@supervisor@en \\
@@ -4144,7 +3907,6 @@
     \vskip 0.4cm%
     {\xiaosi[2.6]%
       \begin{tabular}{l@{\quad}l}%
-        \renewcommand\arraystretch{1}%
         \thu@stretch{11em}{博士后姓名}                  & \thu@author           \\
         \thu@stretch{11em}{流动站（一级学科）名称}      & \thu@discipline@level@i  \\
         \thu@stretch{11em}{专\quad{}业（二级学科）名称} & \thu@discipline@level@ii \\
@@ -4157,7 +3919,7 @@
       研究工作期满时间\quad\thu@format@date{\thu@date@zh@digit}{\thu@end@date}\par
     }%
     \vskip 2.1cm%
-    {\xiaosi[2.6]清华大学人事处（北京）\par}%
+    {\xiaosi[2.6]清华大学人事部（北京）\par}%
     \vskip 0.6cm%
     {\wuhao\thu@format@date{\thu@date@zh@digit@short}{\thu@date}\par}%
   \end{center}%
@@ -4183,12 +3945,7 @@
   }%
   \kvsetkeys{thu@committee}{#1}%
   \ifx\thu@committee@file\@empty
-    \begingroup
-      \ifthu@main@language@english
-        \ctexset{chapter/format=\centering\sffamily\fontsize{16bp}{20bp}\selectfont}
-      \fi
-      \thu@chapter*[]{\thu@committee@name}%
-    \endgroup
+    \thu@chapter*[]{\thu@committee@name}%
   \else
     \thu@pdfbookmark{0}{\thu@committee@name}%
     \includepdf{\thu@committee@file}%
@@ -4201,9 +3958,7 @@
       afterindent = false,
     },
   }%
-  \thusetup{language=chinese}
 }{%
-  \thu@reset@main@language
 }
 %    \end{macrocode}
 % \end{environment}
@@ -4213,20 +3968,18 @@
 % 授权说明
 %    \begin{macrocode}
 \newcommand\copyrightpage[1][]{%
-  \cleardoublepage
   \ifthu@degree@postdoc\relax\else
     \def\thu@@tmp{#1}
     \ifx\thu@@tmp\@empty
-      \thusetup{language=chinese}%
       \ifthu@degree@bachelor
         \thu@copyright@page@bachelor
       \else
         \thu@copyright@page@graduate
       \fi
-      \thu@reset@main@language
     \else
+      \cleardoublepage
       \thispagestyle{empty}%
-      \thu@pdfbookmark{0}{关于学位论文使用授权的说明}%
+      \thu@pdfbookmark{0}{\thu@authorization@title}%
       \thu@phantomsection
       \kv@define@key{thu@copyright}{file}{\includepdf{\kv@value}}%
       \kv@set@family@handler{thu@copyright}{%
@@ -4247,6 +4000,7 @@
 \newcommand{\thu@authorization@frontdate}{%
   日\ifthu@degree@bachelor\hspace{1em}\else\hspace{2em}\fi 期：}
 \newcommand\thu@copyright@page@graduate{%
+  \cleardoublepage
   \newgeometry{
     vmargin = 3.8cm,
     hmargin = 3.2cm,
@@ -4295,6 +4049,7 @@
   \restoregeometry
 }
 \newcommand\thu@copyright@page@bachelor{%
+  \cleardoublepage
   \begingroup
     \ctexset{
       chapter = {
@@ -4363,14 +4118,7 @@
   \fi
   \thusetup{language = chinese}%
   \ifthu@degree@graduate
-    \begingroup
-      \ifthu@main@language@english
-        \ctexset{%
-          chapter/format = \centering\sffamily\fontsize{16bp}{20bp}\selectfont,
-        }%
-      \fi
-      \thu@chapter*{\thu@abstract@name}%
-    \endgroup
+    \thu@chapter*{\thu@abstract@name}%
   \else
     \thu@chapter*[]{\thu@abstract@name}%
   \fi
@@ -4544,20 +4292,8 @@
   }%
   \kvsetkeys{thu@statement}{#1}%
   \ifx\thu@statement@file\@empty
-    \thusetup{language=chinese}%
-    \begingroup
-      \ifthu@degree@graduate
-        \ifthu@main@language@english
-          \ctexset{%
-            chapter/format = \centering\sffamily\fontsize{16bp}{20bp}\selectfont,
-          }%
-        \fi
-      \fi
-      \thu@chapter*{\thu@statement@name}%
-    \endgroup
-    \ifthu@degree@bachelor
-      \thispagestyle{\thu@statement@page@style}%
-    \fi
+    \thu@chapter*{\thu@statement@name}%
+    \thispagestyle{\thu@statement@page@style}%
     \thu@statement@text\par
     \ifthu@degree@graduate
       \vskip 2cm%
@@ -4566,15 +4302,11 @@
     \fi
     {\hfill\thu@signature\thu@underline[2.5cm]\relax
       \thu@backdate\thu@underline[2.5cm]\relax}%
-    \thu@reset@main@language
   \else
     \includepdf[pagecommand={%
       \markboth{\thu@statement@name}{}%
       \thu@phantomsection
       \addcontentsline{toc}{chapter}{\thu@statement@name}%
-      \ifthu@degree@bachelor\else
-        \thispagestyle{empty}%
-      \fi
     }]{\thu@statement@file}%
   \fi
   \ifthu@degree@bachelor
@@ -5344,36 +5076,6 @@
 }
 %    \end{macrocode}
 %
-% \subsection{指导教师/小组学术评语}
-% \begin{environment}{comments}
-%    \begin{macrocode}
-\newenvironment{comments}[1][]{%
-  \@mainmatterfalse
-  \kv@define@key{thu@comments}{name}{\let\thu@comments@name\kv@value}%
-  \kv@set@family@handler{thu@comments}{%
-    \ifx\kv@value\relax
-      \let\thu@comments@name\kv@key
-    \else
-      \kv@handled@false
-    \fi
-  }%
-  \kvsetkeys{thu@comments}{#1}%
-  \chapter{\thu@comments@name}%
-}{%
-}
-%    \end{macrocode}
-% \end{environment}
-%
-% \subsection{答辩委员会决议书}
-% \begin{environment}{resolution}
-%    \begin{macrocode}
-\newenvironment{resolution}{%
-  \@mainmatterfalse
-  \chapter{\thu@resolution@name}%
-}{}
-%    \end{macrocode}
-% \end{environment}
-%
 % \subsection{综合论文训练记录表}
 %
 % \begin{macro}{\record}
@@ -5491,6 +5193,18 @@
 }
 %    \end{macrocode}
 %
+% \subsubsection{\pkg{longtable} 宏包}
+%
+% 我们采用 \pkg{longtable} 来处理跨页的表格。同样我们需要设置其默认字体为五号。
+%    \begin{macrocode}
+\AtEndOfPackageFile*{longtable}{
+  \pretocmd\LT@array{%
+    \fontsize{11bp}{14.3bp}\selectfont
+    \renewcommand\arraystretch{1.4}%
+  }{}{\thu@patch@error{\LT@array}}
+}
+%    \end{macrocode}
+%
 % \subsubsection{\pkg{siunitx} 宏包}
 %
 %    \begin{macrocode}
@@ -5510,7 +5224,7 @@
     \else
       \ifthu@language@english
         \sisetup{
-          list-final-separator = {, and },
+          list-final-separator = { and },
           list-pair-separator  = { and },
           range-phrase         = { to },
         }%
@@ -5600,6 +5314,7 @@
 \PassOptionsToPackage{chapter}{algorithm}
 \AtEndOfPackageFile*{algorithm}{
   \floatname{algorithm}{\thu@algorithm@name}
+  \g@addto@macro\appendix{\renewcommand*{\thealgorithm}{\thechapter-\arabic{algorithm}}}
   \renewcommand\listofalgorithms{%
     \thu@listof{algorithm}%
   }
@@ -5642,6 +5357,7 @@
 %
 %    \begin{macrocode}
 \AtEndOfPackageFile*{minted}{
+  \g@addto@macro\appendix{\renewcommand*{\thelisting}{\thechapter-\arabic{listing}}}%
   \newcommand\thu@set@listing@language{%
     \ifthu@language@chinese
       \floatname{listing}{代码}%
@@ -5825,6 +5541,7 @@
   \setmainfont{Palatino}
   \setsansfont[Scale=MatchLowercase]{Helvetica}
   \setmonofont[Scale=MatchLowercase]{Menlo}
+  \xeCJKsetwidth{‘’“”}{1em}
 }{
   \setmainfont[
     Extension      = .otf,
@@ -5854,7 +5571,6 @@
   math-style=ISO,
   bold-style=ISO,
 }
-\DeclareRobustCommand\mathellipsis{\mathinner{\unicodecdots}}
 \IfFontExistsTF{XITSMath-Regular.otf}{
   \setmathfont[
     Extension    = .otf,

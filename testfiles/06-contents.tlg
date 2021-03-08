@@ -1,7 +1,12 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
+LaTeX Info: Redefining \mathellipsis on input line ....
+LaTeX Info: Redefining \mathellipsis on input line ....
 [1
-] [2
+]
+LaTeX Info: Redefining \mathellipsis on input line ....
+LaTeX Info: Redefining \mathellipsis on input line ....
+[2
 ] (06-contents.toc
 Completed box being shipped out [4]
 \vbox(710.18088+4.1104)x439.87962
@@ -1772,6 +1777,7 @@ Completed box being shipped out [4]
 ..........\glue(\parfillskip) 0.0
 ..........\glue(\rightskip) 0.0
 ...\special{color pop}
+.\kern 0.0
 .\kern -714.29128
 .\hbox(0.0+0.0)x0.0
 ..\kern -72.26999
@@ -1784,7 +1790,6 @@ Completed box being shipped out [4]
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\kern 714.29128
-.\kern 0.0
 Completed box being shipped out [5]
 \vbox(710.18088+4.1104)x439.87962
 .\hbox(0.0+0.0)x0.0
@@ -3810,6 +3815,7 @@ Completed box being shipped out [5]
 ..........\glue(\rightskip) 0.0
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\special{color pop}
+.\kern 0.0
 .\kern -714.29128
 .\hbox(0.0+0.0)x0.0
 ..\kern -72.26999
@@ -3822,7 +3828,6 @@ Completed box being shipped out [5]
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\kern 714.29128
-.\kern 0.0
 Completed box being shipped out [6]
 \vbox(710.18088+4.1104)x439.87962
 .\hbox(0.0+0.0)x0.0
@@ -5903,6 +5908,7 @@ Completed box being shipped out [6]
 ..........\glue(\parfillskip) 0.0
 ..........\glue(\rightskip) 0.0
 ...\special{color pop}
+.\kern 0.0
 .\kern -714.29128
 .\hbox(0.0+0.0)x0.0
 ..\kern -72.26999
@@ -5915,7 +5921,6 @@ Completed box being shipped out [6]
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\kern 714.29128
-.\kern 0.0
 )
 \tf@toc=\write...
 Completed box being shipped out [7]
@@ -6668,6 +6673,7 @@ Completed box being shipped out [7]
 ..........\glue(\rightskip) 0.0
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\special{color pop}
+.\kern 0.0
 .\kern -714.29128
 .\hbox(0.0+0.0)x0.0
 ..\kern -72.26999
@@ -6680,4 +6686,3 @@ Completed box being shipped out [7]
 ....\glue 0.0 plus 1.0fil minus 1.0fil
 ...\glue 0.0 plus 1.0fil minus 1.0fil
 .\kern 714.29128
-.\kern 0.0

@@ -255,8 +255,8 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\penalty -10000
 ....\glue(\rightskip) 0.0
-...\glue(\baselineskip) 10.96898
-...\hbox(9.10602+1.97536)x426.79135, glue set 384.63383fil
+...\glue(\baselineskip) 11.84827
+...\hbox(8.22673+0.16862)x426.79135, glue set 379.28586fil
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
 .....\hbox(8.14243+0.16862)x12.04501
@@ -264,9 +264,9 @@ Completed box being shipped out [1]
 ......\TU/texgyretermes(1)/m/n/12.045 glyph#122
 .....\mathoff
 ....\glue 3.01125 plus 1.50562 minus 1.00374
-....\TU/FandolSong(0)/m/n/12.045 和
-....\kern -0.00018
-....\kern 0.00018
+....\TU/texgyretermes(0)/m/n/12.045 and
+....\kern -0.00021
+....\kern 0.00021
 ....\glue 3.01125 plus 1.50562 minus 1.00374
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
@@ -278,8 +278,8 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\penalty -10000
 ....\glue(\rightskip) 0.0
-...\glue(\baselineskip) 8.99362
-...\hbox(9.10602+1.97536)x426.79135, glue set 366.56633fil
+...\glue(\baselineskip) 11.67964
+...\hbox(8.22673+1.69833)x426.79135, glue set 361.21835fil
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
 .....\hbox(8.14243+0.16862)x12.04501
@@ -297,9 +297,9 @@ Completed box being shipped out [1]
 ......\TU/texgyretermes(1)/m/n/12.045 glyph#122
 .....\mathoff
 ....\glue 3.01125 plus 1.50562 minus 1.00374
-....\TU/FandolSong(0)/m/n/12.045 和
-....\kern -0.00018
-....\kern 0.00018
+....\TU/texgyretermes(0)/m/n/12.045 and
+....\kern -0.00021
+....\kern 0.00021
 ....\glue 3.01125 plus 1.50562 minus 1.00374
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
@@ -311,8 +311,8 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\penalty -10000
 ....\glue(\rightskip) 0.0
-...\glue(\baselineskip) 8.99362
-...\hbox(9.10602+1.97536)x426.79135, glue set 277.2153fil
+...\glue(\baselineskip) 10.13788
+...\hbox(8.23878+1.69833)x426.79135, glue set 271.86732fil
 ....\hbox(8.14243+0.16862)x21.07877
 .....\mathon
 .....\hbox(8.14243+0.16862)x21.07877
@@ -350,9 +350,9 @@ Completed box being shipped out [1]
 ......\TU/texgyretermes(1)/m/n/12.045 glyph#76
 .....\mathoff
 ....\glue 3.01125 plus 1.50562 minus 1.00374
-....\TU/FandolSong(0)/m/n/12.045 和
-....\kern -0.00018
-....\kern 0.00018
+....\TU/texgyretermes(0)/m/n/12.045 and
+....\kern -0.00021
+....\kern 0.00021
 ....\glue 3.01125 plus 1.50562 minus 1.00374
 ....\hbox(8.14243+0.16862)x21.07877
 .....\mathon
@@ -374,24 +374,19 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ....\penalty -10000
 ....\glue(\rightskip) 0.0
-...\glue(\baselineskip) 9.95721
-...\hbox(8.14243+0.16862)x426.79135, glue set 390.65633fil
+...\glue(\baselineskip) 10.23424
+...\hbox(8.14243+0.16862)x426.79135, glue set 387.30783fil
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
 .....\hbox(8.14243+0.16862)x12.04501
 ......\TU/texgyretermes(1)/m/n/12.045 glyph#83
 ......\TU/texgyretermes(1)/m/n/12.045 glyph#122
 .....\mathoff
-....\penalty 10000
-....\glue 3.34851 minus 1.67426
-....\rule(0.0+0.0)x-3.34851
-....\TU/FandolSong(0)/m/n/12.045 ～
-....\rule(0.0+0.0)x-3.34851
-....\kern 0.0002
-....\kern -0.0002
-....\kern -0.99753
-....\kern 0.99753
-....\glue 3.34851 minus 1.67426
+....\glue 3.01125 plus 1.50562 minus 1.00374
+....\TU/texgyretermes(0)/m/n/12.045 to
+....\kern -0.00021
+....\kern 0.00021
+....\glue 3.01125 plus 1.50562 minus 1.00374
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
 .....\hbox(8.14243+0.16862)x12.04501
@@ -404,7 +399,7 @@ Completed box being shipped out [1]
 ....\glue(\rightskip) 0.0
 ...\penalty 150
 ...\glue(\baselineskip) 11.76395
-...\hbox(8.14243+0.16862)x426.79135, glue set 360.93648fil
+...\hbox(8.14243+0.16862)x426.79135, glue set 357.58798fil
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
 .....\hbox(8.14243+0.16862)x12.04501
@@ -423,16 +418,11 @@ Completed box being shipped out [1]
 ........\kern 0.0002
 ......\TU/texgyretermes(1)/m/n/12.045 glyph#43
 .....\mathoff
-....\penalty 10000
-....\glue 3.34851 minus 1.67426
-....\rule(0.0+0.0)x-3.34851
-....\TU/FandolSong(0)/m/n/12.045 ～
-....\rule(0.0+0.0)x-3.34851
-....\kern 0.0002
-....\kern -0.0002
-....\kern -0.99753
-....\kern 0.99753
-....\glue 3.34851 minus 1.67426
+....\glue 3.01125 plus 1.50562 minus 1.00374
+....\TU/texgyretermes(0)/m/n/12.045 to
+....\kern -0.00021
+....\kern 0.00021
+....\glue 3.01125 plus 1.50562 minus 1.00374
 ....\hbox(8.14243+0.16862)x12.04501
 .....\mathon
 .....\hbox(8.14243+0.16862)x12.04501
