@@ -8,7 +8,7 @@ thuthesis-ctan/
 
 ## generated files:
 dtx-style.sty
-thuthesis.cls
+# thuthesis.cls
 thuthesis.pdf
 thuthesis-example.pdf
 spine.pdf
@@ -294,3 +294,5 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+/.vscode/*
