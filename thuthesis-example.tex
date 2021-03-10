@@ -24,7 +24,8 @@
 % 使用授权的说明
 % \copyrightpage
 % 将签字扫描后授权文件 scan-copyright.pdf 替换原始页面
-% \copyrightpage[file=scan-copyright.pdf]
+% \copyrightpage[file="scan/frontmatter.pdf"]
+\includepdf[pages=-]{scan/frontmatter.pdf}
 
 \frontmatter
 \input{data/abstract}
@@ -56,14 +57,15 @@
 \bibliography{ref/refs}  % 参考文献使用 BibTeX 编译
 % \printbibliography       % 参考文献使用 BibLaTeX 编译
 
+% 致谢
+\input{data/acknowledgements}
+
 % 附录
 \appendix
 \input{data/appendix}
 % \input{data/appendix-survey}       % 本科生：外文资料的调研阅读报告
 % \input{data/appendix-translation}  % 本科生：外文资料的书面翻译
 
-% 致谢
-\input{data/acknowledgements}
 
 % 声明
 % \statement

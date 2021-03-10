@@ -270,11 +270,15 @@
   paper          = a4paper,  % 210 * 297mm
   marginparwidth = 0pt,      % 去掉旁注宽度
   marginparsep   = 0pt,      % 去掉旁注和正文之间的距离，这样将整个旁注空间去掉
-  headheight     = 2cm,      % 页眉高度 2cm
-  headsep        = 1cm,      % 页眉与正文之间 1cm，这样合起来3cm
-  foot           = 1.5cm,    % 页脚高度 1.5cm
 }
-\usepackage{showframe} % 如果需要查看边框，可取消此注释
+\setlength{\voffset}{0mm}      % 页眉高度 2cm
+\setlength{\topmargin}{0mm}    %
+\setlength{\headheight}{4mm}   %
+\setlength{\headsep}{6mm}      %
+\setlength{\textheight}{242mm} % 
+\setlength{\textwidth}{160mm}  % 
+\setlength{\footskip}{10mm}    % 页脚高度 1.5cm
+\usepackage{showframe}         % 如果需要查看边框，可取消此注释
 \newcommand\thu@set@geometry{%
   \ifthu@degree@bachelor
     \geometry{
@@ -286,16 +290,16 @@
       % headsep    = 1.0cm,
       % footskip   = 1.45cm,
     }%
-    \ifthu@output@print
-      \geometry{
-        left       = 3.2cm,
-        right      = 3cm,
-      }%
-    \else
-      \geometry{
-        hmargin    = 3cm,
-      }%
-    \fi
+    % \ifthu@output@print
+    %   \geometry{
+    %     left       = 3.2cm,
+    %     right      = 3cm,
+    %   }%
+    % \else
+    %   \geometry{
+    %     hmargin    = 3cm,
+    %   }%
+    % \fi
   \else
     \geometry{
       margin     = 3cm,
@@ -757,6 +761,7 @@
 \thu@def@fontsize{sanhao}{16bp}
 \thu@def@fontsize{xiaosan}{15bp}
 \thu@def@fontsize{sihao}{14bp}
+\thu@def@fontsize{ssihao}{13bp}
 \thu@def@fontsize{xiaosi}{12bp}
 \thu@def@fontsize{wuhao}{10.5bp}
 \thu@def@fontsize{xiaowu}{9bp}
@@ -781,7 +786,7 @@
     \ctexset{
       chapter/name   = {第,章},
     }%
-    \def\bibname{参考文献}%
+    \def\bibname{参\,\,\,考\,\,\,文\,\,\,献}%
     \def\appendixname{附录}%
     \def\indexname{索引}%
     \def\thu@acknowledgements@name{致\qquad 谢}%
@@ -1184,8 +1189,8 @@
       },
       section = {
         format     = \sffamily\bfseries\sihao\selectfont,
-        beforeskip = 9.134pt,
-        afterskip  = 9.134pt,
+        beforeskip = 15.5bp,
+        afterskip  = 12.5bp,
       },
       subsection = {
         format     = \sffamily\bfseries\xiaosi\selectfont,
@@ -1274,9 +1279,9 @@
     \thu@phantomsection
     \addcontentsline{toc}{chapter}{#3}%
   }%
-  % \ifthu@degree@bachelor\ctexset{chapter/beforeskip=40bp}\fi
+  \ifthu@degree@bachelor\ctexset{chapter/afterskip=33bp}\fi
   \chapter*{#3}%
-  % \ifthu@degree@bachelor\ctexset{chapter/beforeskip=30bp}\fi
+  \ifthu@degree@bachelor\ctexset{chapter/afterskip=19bp}\fi
   \IfValueTF{#4}{%
     \ifthenelse{\equal{#4}{}}{%
       \@mkboth{}{}%
@@ -1288,7 +1293,7 @@
   }%
 }
 \setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \renewcommand\tableofcontents{%
   \fancypagestyle{plain}{
     \fancyhead[C]{\songti\wuhao 湖南科技大学本科毕业设计(论文)} 
@@ -1324,15 +1329,15 @@
           % \fi
         }
         {\contentspush{\thecontentslabel\quad}}{}
-        {\rmfamily\thu@leaders\thecontentspage}%
+        {\sihao\rmfamily\thu@leaders\thecontentspage}%
       \titlecontents{section}
         [2em]{\songti\xiaosi}
         {\contentspush{\thecontentslabel\quad}}{}
-        {\thu@leaders\thecontentspage}%
+        {\xiaosi\thu@leaders\thecontentspage}%
       \titlecontents{subsection}
         [2em]{\songti\xiaosi}
         {\contentspush{\thecontentslabel\quad}}{}
-        {\thu@leaders\thecontentspage}%
+        {\xiaosi\thu@leaders\thecontentspage}%
     \else
       \ifthu@main@language@english
         \titlecontents{chapter}
@@ -2131,20 +2136,20 @@
   \fi
   \thusetup{language = chinese}%
   \ifthu@degree@graduate
-    \thu@chapter*{\thu@abstract@name}%
+    \thu@chapter*{\sonti\xiaoer\bfseries\thu@abstract@name}%
   \else
-    \thu@chapter*[]{\thu@abstract@name}%
+    \thu@chapter*[]{\xiaoer\bfseries\thu@abstract@name}%
   \fi
 }{%
   \par
   \null\par
-  \ifthu@degree@graduate
+  % \ifthu@degree@graduate
     \noindent
-    \textsf{关键词：}%
-  \else
-    \textbf{关键词：}%
-  \fi
-  \thu@clist@use{\thu@keywords}{；}%
+    {\heiti{关键词：}}%
+  % \else
+  %   \textbf{关键词：}%
+  % \fi
+  \xiaosi{\thu@clist@use{\thu@keywords}{；}}%
   \ifthu@degree@bachelor
     \cleardoublepage
   \fi
@@ -2164,10 +2169,10 @@
 }{%
   \par
   \null\par
-  \ifthu@degree@graduate
+  % \ifthu@degree@graduate
     \noindent
-  \fi
-  \textbf{Keywords:}\space
+  % \fi
+  \xiaosi\textbf{Keywords:}\space
   \thu@clist@use{\thu@keywords@en}{; }%
   \ifthu@degree@graduate
     \vspace*{\stretch{1}}%
@@ -2544,16 +2549,16 @@
         \if\relax\NAT@date\relax\else\NAT@@close\fi
         \if*#2*\else\textsuperscript{#2}\fi
       \fi}{#1}{#2}}
-  \renewcommand\bibsection{\thu@chapter*{\bibname}}
+  \renewcommand\bibsection{\thu@chapter*{{\songti\sihao\textbf{\bibname}}}}
   \newcommand\thu@set@bibliography@format{%
     \ifthu@degree@bachelor
-      \renewcommand\bibfont{\fontsize{10.5bp}{17bp}\selectfont}%
-      \setlength{\bibsep}{6bp \@plus 3bp \@minus 3bp}%
-      \ifthu@main@language@chinese
-        \setlength{\bibhang}{21bp}%
-      \else
-        \setlength{\bibhang}{0.5in}%
-      \fi
+      \renewcommand\bibfont{\fontsize{10.5bp}{19.5bp}\selectfont}%
+      % \setlength{\bibsep}{6bp \@plus 3bp \@minus 3bp}%
+      % \ifthu@main@language@chinese
+      %   \setlength{\bibhang}{21bp}%
+      % \else
+      %   \setlength{\bibhang}{0.5in}%
+      % \fi
     \else
       \renewcommand\bibfont{\fontsize{10.5bp}{16bp}\selectfont}%
       \setlength{\bibsep}{3bp \@plus 3bp \@minus 3bp}%
