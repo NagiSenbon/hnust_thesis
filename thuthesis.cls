@@ -599,7 +599,7 @@
   \fi
 \fi
 \newcommand\thu@load@cjk@font@windows{%
-  \xeCJKsetup{EmboldenFactor=1}%
+  \xeCJKsetup{EmboldenFactor=2}%
   \setCJKmainfont{SimSun}[
     AutoFakeBold = true,
     ItalicFont   = KaiTi,
@@ -607,7 +607,7 @@
   \setCJKsansfont{SimSun}[AutoFakeBold]%
   \setCJKmonofont{FangSong}%
   \setCJKfamilyfont{zhsong}{SimSun}[AutoFakeBold]%
-  \setCJKfamilyfont{zhhei}{SimHei}[AutoFakeBold]%
+  \setCJKfamilyfont{zhhei}{SimHei}%
   \setCJKfamilyfont{zhkai}{KaiTi}%
   \setCJKfamilyfont{zhfs}{FangSong}%
 }
@@ -1183,22 +1183,22 @@
   \ifthu@degree@bachelor
     \ctexset{%
       chapter = {
-        format     = \centering\sffamily\bfseries\xiaoer\selectfont,
+        format     = \centering\songti\xiaoer\bfseries\selectfont,
         beforeskip = 11.744pt,
         afterskip  = 11.744pt,
       },
       section = {
-        format     = \sffamily\bfseries\sihao\selectfont,
+        format     = \songti\sihao\bfseries\selectfont,
         beforeskip = 15.5bp,
         afterskip  = 12.5bp,
       },
       subsection = {
-        format     = \sffamily\bfseries\xiaosi\selectfont,
+        format     = \songti\xiaosi\bfseries\selectfont,
         beforeskip = 7.83pt,
         afterskip  = 7.83pt,
       },
       subsubsection = {
-        format     = \sffamily\bfseries\xiaosi\selectfont,
+        format     = \songti\xiaosi\bfseries\selectfont,
         beforeskip = 7.83pt,
         afterskip  = 7.83pt,
       },
@@ -1318,10 +1318,11 @@
 \newcommand\thu@leaders{\titlerule*[4bp]{$\cdot$}}
 \newcommand\thu@set@toc@format{%
   \contentsmargin{\z@}%
-  \ifthu@degree@bachelor
-    \ifthu@main@language@chinese
+  % \ifthu@degree@bachelor
+    % \ifthu@main@language@chinese
       \titlecontents{chapter}
-        [\z@]{\addvspace{6bp}
+        [\z@]{
+          % \addvspace{6bp}
           % \ifthu@toc@chapter@style@arial
             % \sffamily\bfseries\sihao
           % \else
@@ -1335,39 +1336,39 @@
         {\contentspush{\thecontentslabel\quad}}{}
         {\xiaosi\thu@leaders\thecontentspage}%
       \titlecontents{subsection}
-        [2em]{\songti\xiaosi}
+        [4em]{\songti\xiaosi}
         {\contentspush{\thecontentslabel\quad}}{}
         {\xiaosi\thu@leaders\thecontentspage}%
-    \else
-      \ifthu@main@language@english
-        \titlecontents{chapter}
-          [\z@]{\addvspace{6bp}\sffamily}
-          {\contentspush{\thecontentslabel\quad}}{}
-          {\rmfamily\thu@leaders\thecontentspage}%
-        \titlecontents{section}
-          [0.5cm]{}
-          {\contentspush{\thecontentslabel\quad}}{}
-          {\thu@leaders\thecontentspage}%
-        \titlecontents{subsection}
-          [1cm]{}
-          {\contentspush{\thecontentslabel\quad}}{}
-          {\thu@leaders\thecontentspage}%
-      \fi
-    \fi
-  \else
-    \titlecontents{chapter}
-      [\z@]{\addvspace{6bp}\sffamily}
-      {\contentspush{\thecontentslabel\quad}}{}
-      {\rmfamily\thu@leaders\thecontentspage}%
-    \titlecontents{section}
-      [1em]{}
-      {\contentspush{\thecontentslabel\quad}}{}
-      {\thu@leaders\thecontentspage}%
-    \titlecontents{subsection}
-      [2em]{}
-      {\contentspush{\thecontentslabel\quad}}{}
-      {\thu@leaders\thecontentspage}%
-  \fi
+    % \else
+    %   \ifthu@main@language@english
+    %     \titlecontents{chapter}
+    %       [\z@]{\addvspace{6bp}\sffamily}
+    %       {\contentspush{\thecontentslabel\quad}}{}
+    %       {\rmfamily\thu@leaders\thecontentspage}%
+    %     \titlecontents{section}
+    %       [0.5cm]{}
+    %       {\contentspush{\thecontentslabel\quad}}{}
+    %       {\thu@leaders\thecontentspage}%
+    %     \titlecontents{subsection}
+    %       [1cm]{}
+    %       {\contentspush{\thecontentslabel\quad}}{}
+    %       {\thu@leaders\thecontentspage}%
+    %   \fi
+    % \fi
+  % \else
+  %   \titlecontents{chapter}
+  %     [\z@]{\addvspace{6bp}\sffamily}
+  %     {\contentspush{\thecontentslabel\quad}}{}
+  %     {\rmfamily\thu@leaders\thecontentspage}%
+  %   \titlecontents{section}
+  %     [1em]{}
+  %     {\contentspush{\thecontentslabel\quad}}{}
+  %     {\thu@leaders\thecontentspage}%
+  %   \titlecontents{subsection}
+  %     [2em]{}
+  %     {\contentspush{\thecontentslabel\quad}}{}
+  %     {\thu@leaders\thecontentspage}%
+  % \fi
 }
 \thu@set@toc@format
 \thu@option@hook{degree}{\thu@set@toc@format}
@@ -2136,9 +2137,9 @@
   \fi
   \thusetup{language = chinese}%
   \ifthu@degree@graduate
-    \thu@chapter*{\sonti\xiaoer\bfseries\thu@abstract@name}%
+    \thu@chapter*{\sonti\xiaoer\textbf{\thu@abstract@name}}%
   \else
-    \thu@chapter*[]{\xiaoer\bfseries\thu@abstract@name}%
+    \thu@chapter*[]{\xiaoer\textbf{\thu@abstract@name}}%
   \fi
 }{%
   \par
@@ -2316,7 +2317,7 @@
   {\contentspush{\tablename~\thecontentslabel\quad}}{}
   {\thu@leaders\thecontentspage}
 \newcommand\listoffiguresandtables{%
-  \thu@chapter*{\thu@list@figure@table@name}%
+  \thu@chapter*{\songti\bfseries\sihao{\thu@list@figure@table@name}}%
   \@starttoc{lof}%
   \par
   \null\par
