@@ -5,13 +5,9 @@
 [![GitHub license](https://img.shields.io/github/license/NagiSenbon/hnust_thesis)](https://github.com/NagiSenbon/hnust_thesis/blob/master/LICENSE)
 
 
-# ThuThesis
+# HNUST Thesis
 
-Scroll down for the English version of README.
-
-**ThuThesis** 是 **T**sing**h**ua **U**niversity **Thesis** LaTeX Template 的缩写。
-
-此宏包旨在建立一个简单易用的清华大学学位论文 LaTeX 模板，包括本科综合论文训练、硕士论文、博士论文以及博士后出站报告。
+此宏包基于 [ThuThesis](https://github.com/tuna/thuthesis)，旨在建立一个简单易用的湖南科技大学学位论文 LaTeX 模板，帮助同学们免于word排版的困扰。
 
 **由于模板升级频繁，在开始使用和提问前，请确保您已经认真完整地阅读了使用说明文档和示例代码。**
 
@@ -31,19 +27,15 @@ Scroll down for the English version of README.
 下载途径：
 
 * 发布版：
-  * [CTAN](https://www.ctan.org/pkg/thuthesis)：可能滞后正式发布少许时间。
   * [GitHub Releases](https://github.com/tuna/thuthesis/releases)：最新版的及时发布途径。
-  * [TUNA 镜像站](https://mirrors.tuna.tsinghua.edu.cn/github-release/tuna/thuthesis/)：GitHub Releases 的镜像。
-  * [Overleaf](https://www.overleaf.com/latex/templates/thuthesis-tsinghua-university-thesis-latex-template/wddqnwbyhtnk)：Overleaf 的模板。
+  * [Overleaf](https://www.overleaf.com/latex/templates/thuthesis-tsinghua-university-thesis-latex-template/wddqnwbyhtnk)：Overleaf 的模板（更新较慢）。
 * 开发版：[GitHub](https://github.com/tuna/thuthesis)
 
 ## 更新日志
 
-每个版本的详细更新日志，请见 [CHANGELOG.md](blob/master/CHANGELOG.md)。使用文档中也包含了这一内容。
+每个版本的详细更新日志，请见 [CHANGELOG.md](./CHANGELOG.md)。使用文档中也包含了这一内容。
 
 ## 升级
-### 自动更新
-通过 TeX 发行版工具（如 `tlmgr`）自动从 [CTAN](https://www.ctan.org/pkg/thuthesis) 更新。
 
 ### 手动更新
 
