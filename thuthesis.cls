@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}[2017/04/15]
 \ProvidesClass{thuthesis}
-[2021/3/10 8.0.0 Tsinghua University Thesis Template]
+[2021/3/10 8.0.0 HNUST University Thesis Template]
 \newcommand\thu@error[1]{%
   \ClassError{thuthesis}{#1}{}%
 }
@@ -278,7 +278,6 @@
 \setlength{\textheight}{242mm} % 
 \setlength{\textwidth}{160mm}  % 
 \setlength{\footskip}{10mm}    % 页脚高度 1.5cm
-\usepackage{showframe}         % 如果需要查看边框，可取消此注释
 \newcommand\thu@set@geometry{%
   \ifthu@degree@bachelor
     \geometry{

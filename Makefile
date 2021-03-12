@@ -22,7 +22,7 @@ endif
 
 thesis: $(THESIS).pdf
 
-all: thesis spine
+all: thesis
 
 all-dev: doc all
 
