@@ -1,7 +1,6 @@
 [![Actions Status](https://github.com/tuna/thuthesis/workflows/Test/badge.svg)](https://github.com/tuna/thuthesis/actions)
 [![GitHub issues](https://img.shields.io/github/issues/NagiSenbon/hnust_thesis)](https://github.com/NagiSenbon/hnust_thesis/issues)
 [![GitHub commits](https://img.shields.io/github/commits-since/tuna/thuthesis/latest)](https://https://github.com/NagiSenbon/hnust_thesis/commits/master)
-[![CTAN](https://img.shields.io/ctan/v/thuthesis)](https://www.ctan.org/pkg/thuthesis)
 [![GitHub license](https://img.shields.io/github/license/NagiSenbon/hnust_thesis)](https://github.com/NagiSenbon/hnust_thesis/blob/master/LICENSE)
 
 
