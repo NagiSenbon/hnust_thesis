@@ -68,6 +68,7 @@ make [{all|thesis|spine|doc|clean|cleanall|distclean}]
 
 # Todo
 
+- [ ] 封面、任务书、评语、答辩记录等 Latex 化
 - [ ] 更详尽的格式调整
 - [ ] hnust 化
 - [ ] 硕士生及博士生的论文格式
