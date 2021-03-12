@@ -27,9 +27,9 @@
 下载途径：
 
 * 发布版：
-  * [GitHub Releases](https://github.com/tuna/thuthesis/releases)：最新版的及时发布途径。
+  * [GitHub Releases](https://github.com/NagiSenbon/hnust_thesis/releases)：最新版的及时发布途径。
   * [Overleaf](https://www.overleaf.com/latex/templates/thuthesis-tsinghua-university-thesis-latex-template/wddqnwbyhtnk)：Overleaf 的模板（更新较慢）。
-* 开发版：[GitHub](https://github.com/tuna/thuthesis)
+* 开发版：[GitHub](https://github.com/NagiSenbon/hnust_thesis)
 
 ## 更新日志
 
