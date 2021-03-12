@@ -7,7 +7,7 @@
 
 # HNUST Thesis
 
-此宏包基于 [ThuThesis](https://github.com/tuna/thuthesis)，旨在建立一个简单易用的湖南科技大学学位论文 LaTeX 模板，帮助同学们免于word排版的困扰。
+此宏包基于 [ThuThesis](https://github.com/tuna/thuthesis)，并根据 [毕业设计（论文）要求与撰写规范（本部  理工类）](scan\毕业设计（论文）要求与撰写规范（本部  理工类）.pdf) 进行格式调整。旨在建立一个简单易用的湖南科技大学学位论文 LaTeX 模板，帮助同学们免于word排版的困扰。
 
 **由于模板升级频繁，在开始使用和提问前，请确保您已经认真完整地阅读了使用说明文档和示例代码。**
 
@@ -43,15 +43,6 @@
 
 下载发布版的的 zip 包，使用其中的 `thuthesis.cls` 等文件覆盖原有的即可，无须额外操作。
 
-#### 开发板
-
-从 GitHub clone 项目源码或者下载源码 zip 包，执行命令（Windows 用户在文件夹空白处按 `Shift + 鼠标右键`，点击“在此处打开命令行窗口”）：
-
-```shell
-xetex thuthesis.ins
-```
-
-即可得到 `thuthesis.cls` 等模板文件。
 
 ## 提问
 按推荐顺序排序：
@@ -66,6 +57,7 @@ make [{all|thesis|spine|doc|clean|cleanall|distclean}]
 ```
 
 ### 目标
+
 * `make thesis`    生成论文 thuthesis-example.pdf；
 * `make spine`     生成书脊 spine.pdf；
 * `make doc`       生成模板使用说明书 thuthesis.pdf；
@@ -75,3 +67,9 @@ make [{all|thesis|spine|doc|clean|cleanall|distclean}]
 * `make distclean` 删除示例文件和模板的所有中间文件和 PDF。
 
 ---
+
+# Todo
+
+- [ ] 更详尽的格式调整
+- [ ] hnust 化
+- [ ] 硕士生及博士生的论文格式 
